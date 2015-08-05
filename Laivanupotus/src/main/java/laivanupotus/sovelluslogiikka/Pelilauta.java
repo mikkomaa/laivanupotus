@@ -20,14 +20,14 @@ public class Pelilauta {
     private PisteidenLaskija pisteidenLaskija;
 
     public Pelilauta() {
-        this.lauta = new Ruutu[KORKEUS][LEVEYS];
+        this.lauta = new Ruutu[LAUDAN_KORKEUS][LAUDAN_LEVEYS];
         this.alustaLauta();
         this.pisteidenLaskija = new PisteidenLaskija();
     }
 
     public void alustaLauta() {
-        for (int korkeus = 0; korkeus < KORKEUS; korkeus++) {
-            for (int leveys = 0; leveys < LEVEYS; leveys++) {
+        for (int korkeus = 0; korkeus < LAUDAN_KORKEUS; korkeus++) {
+            for (int leveys = 0; leveys < LAUDAN_LEVEYS; leveys++) {
                 this.lauta[korkeus][leveys] = TYHJA;
             }
         }
@@ -63,8 +63,8 @@ public class Pelilauta {
 
     public boolean ovatkoLaivatUponneet() {
         int osumia = 0;
-        for (int korkeus = 0; korkeus < KORKEUS; korkeus++) {
-            for (int leveys = 0; leveys < LEVEYS; leveys++) {
+        for (int korkeus = 0; korkeus < LAUDAN_KORKEUS; korkeus++) {
+            for (int leveys = 0; leveys < LAUDAN_LEVEYS; leveys++) {
                 if (this.lauta[korkeus][leveys] == OSUMA) {
                     osumia++;
                 }
@@ -88,8 +88,8 @@ public class Pelilauta {
     @Override
     public String toString() {
         String mjono = "";
-        for (int korkeus = 0; korkeus < KORKEUS; korkeus++) {
-            for (int leveys = 0; leveys < LEVEYS; leveys++) {
+        for (int korkeus = 0; korkeus < LAUDAN_KORKEUS; korkeus++) {
+            for (int leveys = 0; leveys < LAUDAN_LEVEYS; leveys++) {
                 mjono += this.lauta[korkeus][leveys] + "\t";
             }
             mjono += "\n";
@@ -98,6 +98,6 @@ public class Pelilauta {
     }
     
     private boolean onkoRuutuLaudalla(int korkeus, int leveys) {
-        return korkeus >= 0 && korkeus < KORKEUS && leveys >= 0 && leveys < LEVEYS;
+        return korkeus >= 0 && korkeus < LAUDAN_KORKEUS && leveys >= 0 && leveys < LAUDAN_LEVEYS;
     }
 }

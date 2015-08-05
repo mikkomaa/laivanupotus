@@ -11,8 +11,8 @@ package laivanupotus.domain;
  */
 public class Vakiot {
 
-    public static final int LEVEYS = 10;
-    public static final int KORKEUS = 10;
+    public static final int LAUDAN_LEVEYS = 10;
+    public static final int LAUDAN_KORKEUS = 10;
     public static final int LAIVOJA = 4;
     public static final int LAIVARUUTUJA = 10;
 }

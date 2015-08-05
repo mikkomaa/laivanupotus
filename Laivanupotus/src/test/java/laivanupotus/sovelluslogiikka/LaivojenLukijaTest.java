@@ -21,7 +21,7 @@ import static org.junit.Assert.*;
 public class LaivojenLukijaTest {
 
     LaivojenLukija laivojenLukija;
-    Pelilauta pelilauta;
+    Pelilauta pelilauta, kulmalauta;
 
     @Before
     public void setUp() {
@@ -43,6 +43,23 @@ public class LaivojenLukijaTest {
         pelilauta.setRuutu(1, 8, LAIVA);
 
         pelilauta.setRuutu(8, 8, LAIVA);
+        
+        // Luodaan lauta, jossa laivat ovat oikein laudan kulmissa.
+        kulmalauta = new Pelilauta();
+        
+        kulmalauta.setRuutu(0, 0, LAIVA);
+        kulmalauta.setRuutu(0, 1, LAIVA);
+        kulmalauta.setRuutu(0, 2, LAIVA);
+        kulmalauta.setRuutu(0, 3, LAIVA);
+        
+        kulmalauta.setRuutu(0, 7, LAIVA);
+        kulmalauta.setRuutu(0, 8, LAIVA);
+        kulmalauta.setRuutu(0, 9, LAIVA);
+        
+        kulmalauta.setRuutu(9, 0, LAIVA);
+        kulmalauta.setRuutu(9, 1, LAIVA);
+        
+        kulmalauta.setRuutu(9, 9, LAIVA);
     }
 
     @After
@@ -58,14 +75,43 @@ public class LaivojenLukijaTest {
         pelilauta.setRuutu(2, 7, LAIVA);
         assertEquals(true, laivojenLukija.lueLaivat(pelilauta));
     }
+    
+    @Test
+    public void lueLaivatToimiiOikeinKunLaivatOvatLaudanKulmissa() {
+        assertEquals(true, laivojenLukija.lueLaivat(kulmalauta));
+    }
+    
+    @Test
+    public void lueLaivatToimiiOikeinKunLaivatEnsinVaarinJaSittenOikein() {
+        pelilauta.setRuutu(6, 6, LAIVA);
+        assertEquals(false, laivojenLukija.lueLaivat(pelilauta));
+        
+        pelilauta.setRuutu(6, 6, TYHJA);
+        assertEquals(true, laivojenLukija.lueLaivat(pelilauta));
+    }
+    
+    @Test
+    public void lueLaivatToimiiOikeinKunLaivatEnsinOikeinJaSittenVaarin() {
+        assertEquals(true, laivojenLukija.lueLaivat(pelilauta));
+        
+        pelilauta.setRuutu(6, 6, LAIVA);
+        assertEquals(false, laivojenLukija.lueLaivat(pelilauta));
+    }
 
     @Test
-    public void onkoLaivojaKulmittainToimiiOikeinKunLaivojaOnKulmittain() {
+    public void onkoLaivojaKulmittainToimiiOikeinKunOikeassaAlakulmassaOnLaiva() {
         pelilauta.setRuutu(8, 8, TYHJA);
         pelilauta.setRuutu(2, 9, LAIVA);
         assertEquals(false, laivojenLukija.lueLaivat(pelilauta));
     }
-
+    
+    @Test
+    public void onkoLaivojaKulmittainToimiiOikeinKunVasemmassaAlakulmassaOnLaiva() {
+        pelilauta.setRuutu(8, 8, TYHJA);
+        pelilauta.setRuutu(2, 7, LAIVA);
+        assertEquals(false, laivojenLukija.lueLaivat(pelilauta));
+    }
+    
     @Test
     public void etsiLaivatLaudaltaToimiiOikein() {
         laivojenLukija.lueLaivat(pelilauta);

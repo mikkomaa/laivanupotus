@@ -27,18 +27,18 @@ public class LaivojenLukija {
     }
 
     public boolean lueLaivat(Pelilauta pelilauta) {
+        this.laivat.clear();
         kopioiPelilauta(pelilauta);
         if (onkoLaivojaKulmittain()) {
             return false;
         }
         etsiLaivatLaudalta();
         if (!onkoLaivojaOikeaMaara() || !onkoLaivojenKootOikein()) {
-            this.laivat.clear();
             return false;
         }
         return true;
     }
-    
+
     @Override
     public String toString() {
         String mjono = "";
@@ -50,8 +50,8 @@ public class LaivojenLukija {
 
     private void kopioiPelilauta(Pelilauta pelilauta) {
         Ruutu ruutu;
-        for (int korkeus = 0; korkeus < KORKEUS; korkeus++) {
-            for (int leveys = 0; leveys < LEVEYS; leveys++) {
+        for (int korkeus = 0; korkeus < LAUDAN_KORKEUS; korkeus++) {
+            for (int leveys = 0; leveys < LAUDAN_LEVEYS; leveys++) {
                 ruutu = pelilauta.getRuutu(korkeus, leveys);
                 this.lauta.setRuutu(korkeus, leveys, ruutu);
             }
@@ -60,8 +60,8 @@ public class LaivojenLukija {
 
     private void etsiLaivatLaudalta() {
         Ruutu ruutu;
-        for (int korkeus = 0; korkeus < KORKEUS; korkeus++) {
-            for (int leveys = 0; leveys < LEVEYS; leveys++) {
+        for (int korkeus = 0; korkeus < LAUDAN_KORKEUS; korkeus++) {
+            for (int leveys = 0; leveys < LAUDAN_LEVEYS; leveys++) {
                 ruutu = this.lauta.getRuutu(korkeus, leveys);
                 if (ruutu == LAIVA) {
                     luoLaiva(korkeus, leveys);
@@ -87,18 +87,18 @@ public class LaivojenLukija {
 
         laiva.lisaaRuutu(korkeus, leveys);
         this.lauta.setRuutu(korkeus, leveys, LUETTU); // Jotta ei lueta samaa ruutua uudestaan.
-        maaritaLaivanSijainti(korkeus - 1, leveys, laiva);
+//        maaritaLaivanSijainti(korkeus - 1, leveys, laiva);
         maaritaLaivanSijainti(korkeus + 1, leveys, laiva);
-        maaritaLaivanSijainti(korkeus, leveys - 1, laiva);
+//        maaritaLaivanSijainti(korkeus, leveys - 1, laiva);
         maaritaLaivanSijainti(korkeus, leveys + 1, laiva);
     }
 
     private boolean onkoLaivojaKulmittain() {
         Ruutu ruutu;
-        for (int korkeus = 0; korkeus < KORKEUS; korkeus++) {
-            for (int leveys = 0; leveys < LEVEYS; leveys++) {
+        for (int korkeus = 0; korkeus < LAUDAN_KORKEUS; korkeus++) {
+            for (int leveys = 0; leveys < LAUDAN_LEVEYS; leveys++) {
                 ruutu = this.lauta.getRuutu(korkeus, leveys);
-                if (ruutu == LAIVA && onkoRuudunKulmassaLaiva(korkeus, leveys)) {
+                if (ruutu == LAIVA && onkoRuudunAlakulmassaLaiva(korkeus, leveys)) {
                     return true;
                 }
             }
@@ -106,10 +106,8 @@ public class LaivojenLukija {
         return false;
     }
 
-    private boolean onkoRuudunKulmassaLaiva(int korkeus, int leveys) {
-        return this.lauta.getRuutu(korkeus - 1, leveys - 1) == LAIVA
-                || this.lauta.getRuutu(korkeus - 1, leveys + 1) == LAIVA
-                || this.lauta.getRuutu(korkeus + 1, leveys - 1) == LAIVA
+    private boolean onkoRuudunAlakulmassaLaiva(int korkeus, int leveys) {
+        return this.lauta.getRuutu(korkeus + 1, leveys - 1) == LAIVA
                 || this.lauta.getRuutu(korkeus + 1, leveys + 1) == LAIVA;
     }
 

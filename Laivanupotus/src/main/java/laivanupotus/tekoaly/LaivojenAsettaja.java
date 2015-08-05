@@ -40,8 +40,8 @@ public class LaivojenAsettaja {
 
     private void asetaLaiva(int laivanKoko) {
         Random arpa = new Random();
-        int alkupisteenKorkeus = arpa.nextInt(KORKEUS);
-        int alkupisteenLeveys = arpa.nextInt(LEVEYS);
+        int alkupisteenKorkeus = arpa.nextInt(LAUDAN_KORKEUS);
+        int alkupisteenLeveys = arpa.nextInt(LAUDAN_LEVEYS);
         Suunta suunta = arvoSuunta(arpa);
         asetaLaivanRuudut(alkupisteenKorkeus, alkupisteenLeveys, laivanKoko, suunta);
     }

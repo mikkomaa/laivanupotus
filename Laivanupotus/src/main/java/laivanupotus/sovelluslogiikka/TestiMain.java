@@ -6,6 +6,7 @@
 package laivanupotus.sovelluslogiikka;
 
 import static laivanupotus.domain.Ruutu.LAIVA;
+import laivanupotus.tekoaly.Ampuja;
 
 /**
  *
@@ -31,12 +32,14 @@ public class TestiMain {
         pelilauta.setRuutu(2, 7, LAIVA);
 
         pelilauta.setRuutu(8, 8, LAIVA);
-        
+
         LaivojenLukija laivojenLukija = new LaivojenLukija();
         laivojenLukija.lueLaivat(pelilauta);
         //System.out.println(laivojenLukija.toString());
-        
-        System.out.println(pelilauta.toString());
+
+       // System.out.println(pelilauta.toString());
+        Ampuja ampuja = new Ampuja();
+        System.out.println(ampuja);
     }
-    
+
 }

@@ -55,7 +55,7 @@ public class Ampuja {
 
     @Override
     public String toString() {
-        return "" + sisainenLauta + "\npino = " + pino
+        return "" + sisainenLauta + "pino = " + pino
                 + "\nviimeisinKoordinaatti = " + viimeisinKoordinaatti;
     }
 
@@ -64,12 +64,12 @@ public class Ampuja {
         Ruutu ruutu;
         Random arpa = new Random();
         do {
-            korkeus = arpa.nextInt(KORKEUS);
-            leveys = arpa.nextInt(LEVEYS);
+            korkeus = arpa.nextInt(LAUDAN_KORKEUS);
+            leveys = arpa.nextInt(LAUDAN_LEVEYS);
             ruutu = this.sisainenLauta.getRuutu(korkeus, leveys);
         } while (ruutu != TYHJA);
         return 10 * korkeus + leveys;
-    }
+    }   
 
     private Integer haeKoordinaattiPinosta() {
         Integer koordinaatti = null;
