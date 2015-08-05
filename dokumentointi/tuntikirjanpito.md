@@ -20,3 +20,9 @@
 
 1.8.2015
 * tekoalyn testien kirjoitusta, 3 h
+
+3.8.2015
+* tekoalyn ohjelmointia ja testaamista, 2 h
+
+4.8.2015
+* tekoalyn testaamista, 3 h
