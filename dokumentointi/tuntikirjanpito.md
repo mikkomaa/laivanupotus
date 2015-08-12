@@ -26,3 +26,16 @@
 
 4.8.2015
 * tekoalyn testaamista, 3 h
+
+8.8.2015
+* Graafisiin käyttöliittymiin perehtymistä, 2 h
+
+9.8.2015
+* Graafisiin käyttöliittymiin perehtymistä, 5 h
+
+11.8.2015
+* Tekoälyn testien kirjoittamista, 2 h
+
+12.8.2015
+* Käyttöliittymän luokkien (Kayttoliittyma, OhjeNapinKuuntelija ja Painike) kirjoittamista, 5 h
+* Projektin asetusten säätämistä ja GitHubin päivitystä, 1 h
