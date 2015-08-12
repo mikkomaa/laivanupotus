@@ -39,4 +39,16 @@ public class Tekoaly {
     public void paivitaAmmuksenTulos(Ruutu ruutu) {
         this.ampuja.paivitaSisainenLauta(ruutu);
     }
+
+    @Override
+    public String toString() {
+        return "Tekoälyn pelilauta:\n" + this.tekoalynLauta.toString()
+                + "\nAmpujan sisäinen lauta ja muut tiedot:\n"
+                + this.ampuja.toString();
+    }
+    
+    // testausta helpottamaan
+    public Pelilauta getTekoalynLauta() {
+        return this.tekoalynLauta;
+    }
 }
