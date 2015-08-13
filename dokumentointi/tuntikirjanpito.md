@@ -39,3 +39,6 @@
 12.8.2015
 * Käyttöliittymän luokkien (Kayttoliittyma, OhjeNapinKuuntelija ja Painike) kirjoittamista, 5 h
 * Projektin asetusten säätämistä ja GitHubin päivitystä, 1 h
+
+13.8.2015
+* Tarkennetun luokkakaavion tekeminen, 0,5 h
