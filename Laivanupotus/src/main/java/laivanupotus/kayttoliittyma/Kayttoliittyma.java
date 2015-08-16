@@ -22,6 +22,8 @@ public class Kayttoliittyma implements Runnable {
 
     private JFrame frame;
     private JTextArea teksti;
+    private JTextArea pelaajanPisteet;
+    private JTextArea tekoalynPisteet;
     private JPanel pelaajanLauta;
     private JPanel tekoalynLauta;
     private Peli peli;
@@ -49,13 +51,16 @@ public class Kayttoliittyma implements Runnable {
         container.setLayout(layout);
 
         this.teksti = luoTekstikentta();
+        luoPistekentat();
         luoPelilaudat();
         this.pelaajanLauta.setPreferredSize(new Dimension(this.IKKUNAN_LEVEYS, 250));
         this.tekoalynLauta.setPreferredSize(new Dimension(this.IKKUNAN_LEVEYS, 250));
         container.add(luoNimi("Pelaaja"));
+        container.add(this.pelaajanPisteet);
         container.add(this.pelaajanLauta);
         container.add(Box.createRigidArea(new Dimension(0, 10)));
         container.add(luoNimi("Tekoäly"));
+        container.add(this.tekoalynPisteet);
         container.add(this.tekoalynLauta);
         container.add(Box.createRigidArea(new Dimension(0, 10)));
         container.add(luoPainikkeet());
@@ -71,7 +76,17 @@ public class Kayttoliittyma implements Runnable {
         alue.setEnabled(false);
         alue.setLineWrap(true);
         alue.setWrapStyleWord(true);
+        alue.setDisabledTextColor(Color.black);
         return alue;
+    }
+    
+    private void luoPistekentat() {
+        this.pelaajanPisteet = new JTextArea("Pisteet: 0");
+        this.pelaajanPisteet.setEnabled(false);
+        this.pelaajanPisteet.setDisabledTextColor(Color.black);
+        this.tekoalynPisteet = new JTextArea("Pisteet: 0");
+        this.tekoalynPisteet.setEnabled(false);
+        this.tekoalynPisteet.setDisabledTextColor(Color.black);
     }
 
     private void luoPelilaudat() {
@@ -82,12 +97,13 @@ public class Kayttoliittyma implements Runnable {
             for (int leveys = 0; leveys < LAUDAN_LEVEYS; leveys++) {
                 Painike painike = new Painike(korkeus, leveys);
                 painike.setBackground(Color.white);
-                //painike.addActionListener(new PelaajanLaudanKuuntelija(painike, peli));
+                painike.addActionListener(new PelaajanLaudanKuuntelija(painike, peli));
                 this.pelaajanLauta.add(painike);
 
                 painike = new Painike(korkeus, leveys);
                 painike.setBackground(Color.white);
-                //painike.addActionListener(new TekoalynLaudanKuuntelija(painike, teksti, peli, pelaajanLauta));
+                painike.addActionListener(new TekoalynLaudanKuuntelija(painike,
+                        teksti, pelaajanPisteet, tekoalynPisteet, peli, pelaajanLauta));
                 this.tekoalynLauta.add(painike);
             }
         }
@@ -95,17 +111,18 @@ public class Kayttoliittyma implements Runnable {
 
     private JPanel luoNimi(String nimi) {
         JPanel paneeli = new JPanel();
-        JTextField kentta = new JTextField(nimi);
-        kentta.setEnabled(false);
-        paneeli.add(kentta);
+        JTextField nimikentta = new JTextField(nimi);
+        nimikentta.setEnabled(false);
+        nimikentta.setDisabledTextColor(Color.black);
+        paneeli.add(nimikentta);
         return paneeli;
     }
 
     private JPanel luoPainikkeet() {
         JPanel painikkeet = new JPanel(new GridLayout(1, 2));
         JButton aloita = new JButton("Aloita");
-//        aloita.addActionListener(new AloitaNapinKuuntelija(teksti, peli,
-//                pelaajanLauta, tekoalynLauta));
+        aloita.addActionListener(new AloitaNapinKuuntelija(teksti,
+                pelaajanPisteet, tekoalynPisteet, peli, pelaajanLauta, tekoalynLauta));
         JButton ohje = new JButton("Ohje");
         ohje.addActionListener(new OhjeNapinKuuntelija(teksti, peli));
         painikkeet.add(aloita);

@@ -173,4 +173,11 @@ public class PelilautaTest {
         pelilauta.nollaaPisteet();
         assertEquals(0, pelilauta.getPisteet());
     }
+    
+    @Test
+    public void alustaLautaNollaaPisteetOikein() {
+        pelilauta.lisaaPisteet(50);
+        pelilauta.alustaLauta();
+        assertEquals(0, pelilauta.getPisteet());
+    }
 }

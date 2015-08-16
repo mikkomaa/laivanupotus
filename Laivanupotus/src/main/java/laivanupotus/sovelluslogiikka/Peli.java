@@ -6,6 +6,8 @@
 package laivanupotus.sovelluslogiikka;
 
 import laivanupotus.domain.Ruutu;
+import static laivanupotus.domain.Ruutu.*;
+import static laivanupotus.domain.Vakiot.*;
 import laivanupotus.tekoaly.Tekoaly;
 
 /**
@@ -36,7 +38,6 @@ public class Peli {
 
     public void alustaPeli() {
         this.pelaajanLauta.alustaLauta();
-        this.tekoalynLauta.alustaLauta();
         this.tekoaly.alustaTekoaly();
         this.peliKaynnissa = false;
     }
@@ -67,11 +68,27 @@ public class Peli {
     }
 
     public Ruutu ammuTekoalynLautaan(int korkeus, int leveys) {
-        return this.tekoalynLauta.ammu(korkeus, leveys);
+        Ruutu ruutu = this.tekoalynLauta.ammu(korkeus, leveys);
+        this.lisaaPisteet(this.pelaajanLauta, ruutu);
+        return ruutu;
     }
 
     public int ammuPelaajanLautaan() {
-        return this.tekoaly.ammu();
+        int koordinaatti = this.tekoaly.ammu();
+        int korkeus = koordinaatti / 10;
+        int leveys = koordinaatti % 10;
+        Ruutu ruutu = this.pelaajanLauta.ammu(korkeus, leveys);
+        this.tekoaly.paivitaAmmuksenTulos(ruutu);
+        this.lisaaPisteet(this.tekoalynLauta, ruutu);
+        return koordinaatti;
+    }
+
+    public int getTekoalynPisteet() {
+        return this.tekoalynLauta.getPisteet();
+    }
+
+    public int getPelaajanPisteet() {
+        return this.pelaajanLauta.getPisteet();
     }
 
     public String tulostaOhje() {
@@ -81,5 +98,19 @@ public class Peli {
                 + "Aloita-painiketta. Pelissä ammu hiirellä tekoälyn lautaan. "
                 + "Pelin voittaa se, joka upottaa ensin toisen kaikki laivat. "
                 + "Voit aloittaa uuden pelin milloin tahansa Aloita-painikkeella.";
+    }
+
+    @Override
+    public String toString() {
+        return this.pelaajanLauta.toString() + this.tekoaly.toString() + "\n"
+                + this.peliKaynnissa;
+    }
+
+    private void lisaaPisteet(Pelilauta pelilauta, Ruutu ruutu) {
+        if (ruutu == OSUMA) {
+            pelilauta.lisaaPisteet(OSUMAPISTEET);
+        } else {
+            pelilauta.lisaaPisteet(HUTIPISTEET);
+        }
     }
 }

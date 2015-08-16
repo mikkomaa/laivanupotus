@@ -21,8 +21,8 @@ public class Pelilauta {
 
     public Pelilauta() {
         this.lauta = new Ruutu[LAUDAN_KORKEUS][LAUDAN_LEVEYS];
-        this.alustaLauta();
         this.pisteidenLaskija = new PisteidenLaskija();
+        this.alustaLauta();
     }
 
     public void alustaLauta() {
@@ -31,6 +31,7 @@ public class Pelilauta {
                 this.lauta[korkeus][leveys] = TYHJA;
             }
         }
+        this.pisteidenLaskija.nollaaPisteet();
     }
 
     public void setRuutu(int korkeus, int leveys, Ruutu ruutu) {
@@ -77,12 +78,12 @@ public class Pelilauta {
         this.pisteidenLaskija.lisaaPisteet(maara);
     }
     
-    public void nollaaPisteet() {
-        this.pisteidenLaskija.nollaaPisteet();
-    }
-    
     public int getPisteet() {
         return this.pisteidenLaskija.getPisteet();
+    }
+    
+    public void nollaaPisteet() {
+        this.pisteidenLaskija.nollaaPisteet();
     }
     
     @Override

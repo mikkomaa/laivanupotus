@@ -87,9 +87,7 @@ public class LaivojenLukija {
 
         laiva.lisaaRuutu(korkeus, leveys);
         this.lauta.setRuutu(korkeus, leveys, LUETTU); // Jotta ei lueta samaa ruutua uudestaan.
-//        maaritaLaivanSijainti(korkeus - 1, leveys, laiva);
         maaritaLaivanSijainti(korkeus + 1, leveys, laiva);
-//        maaritaLaivanSijainti(korkeus, leveys - 1, laiva);
         maaritaLaivanSijainti(korkeus, leveys + 1, laiva);
     }
 

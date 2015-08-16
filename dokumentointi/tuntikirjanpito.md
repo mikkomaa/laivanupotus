@@ -1,11 +1,11 @@
-ï»¿26.7.2015
+26.7.2015
 * GitHubin asentamista ja kurssisivuun tutustumista, 3 h
 
 27.7.2015
-* aiheen valintaa sekÃ¤ ohjelman rakenteen ja luokkien pohdintaa, 3 h
+* aiheen valintaa sekä ohjelman rakenteen ja luokkien pohdintaa, 3 h
 
 28.7.2015
-* ensimmÃ¤isen tehtÃ¤vÃ¤n tekemistÃ¤, 2 h
+* ensimmäisen tehtävän tekemistä, 2 h
 * ohjelmoinnin aloitusta, 2 h
 
 29.7.2015
@@ -15,7 +15,7 @@
 * testien kirjoittamista luokille, 2 h
 
 31.7.2015
-* mÃ¤Ã¤rittelyvaiheen luokkakaavio, 1 h
+* määrittelyvaiheen luokkakaavio, 1 h
 * tekoalyn ohjelmointia, 5 h
 
 1.8.2015
@@ -28,17 +28,28 @@
 * tekoalyn testaamista, 3 h
 
 8.8.2015
-* Graafisiin kÃ¤yttÃ¶liittymiin perehtymistÃ¤, 2 h
+* Graafisiin käyttöliittymiin perehtymistä, 2 h
 
 9.8.2015
-* Graafisiin kÃ¤yttÃ¶liittymiin perehtymistÃ¤, 5 h
+* Graafisiin käyttöliittymiin perehtymistä, 5 h
 
 11.8.2015
-* TekoÃ¤lyn testien kirjoittamista, 2 h
+* Tekoälyn testien kirjoittamista, 2 h
 
 12.8.2015
-* KÃ¤yttÃ¶liittymÃ¤n luokkien (Kayttoliittyma, OhjeNapinKuuntelija ja Painike) kirjoittamista, 5 h
-* Projektin asetusten sÃ¤Ã¤tÃ¤mistÃ¤ ja GitHubin pÃ¤ivitystÃ¤, 1 h
+* Käyttöliittymän luokkien (Kayttoliittyma, OhjeNapinKuuntelija ja Painike) kirjoittamista, 5 h
+* Projektin asetusten säätämistä ja GitHubin päivitystä, 1 h
 
 13.8.2015
 * Tarkennetun luokkakaavion tekeminen, 0,5 h
+
+14.8.2015
+* Katselmoitavaan koodiin tutustumista, 1 h
+
+15.8.2015
+* Koodikatselmointi, 2 h
+* Käyttöliittymän koodaamista, 2 h
+
+16.8.2015
+* Käyttöliittymän tapahtumankuuntelijoiden kirjoittamista, 4 h
+* Peli-luokan testien kirjoittamista ja ohjelman viimeistelyä, 2 h
