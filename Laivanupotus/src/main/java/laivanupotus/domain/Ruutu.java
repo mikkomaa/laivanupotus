@@ -1,14 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laivanupotus.domain;
 
 /**
- *
- * @author Admin
+ * Luokka määrittelee pelilaudan ruutujen mahdolliset arvot
  */
 public enum Ruutu {
-    TYHJA, LAIVA, AMMUTTU, OSUMA, LUETTU
+
+    /**
+     * Ruudussa ei ole laivaa, eikä ruutuun ole ammuttu
+     */
+    TYHJA,
+
+    /**
+     * Ruudussa on laiva, eikä ruutuun ole ammuttu
+     */
+    LAIVA,
+
+    /**
+     * Ruutu oli ensin tyhjä, ja ruutuun on ammuttu
+     */
+    AMMUTTU,
+
+    /**
+     * Ruudussa oli ensin laiva, ja ruutuun on ammuttu
+     */
+    OSUMA,
+
+    /**
+     * Apuarvo, jota LaivojenLukija käyttää toiminnassaan
+     */
+    LUETTU
 }

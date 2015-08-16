@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laivanupotus.main;
 
 import javax.swing.SwingUtilities;
@@ -10,15 +5,16 @@ import laivanupotus.kayttoliittyma.Kayttoliittyma;
 import laivanupotus.sovelluslogiikka.Peli;
 
 /**
- *
- * @author Admin
+ * Pääohjelmaluokka pelin käynnistämiseen
  */
 public class Main {
 
     /**
-     * @param args the command line arguments
+     * Metodi luo pelin ja käyttöliittymän sekä käynnistää pelin
+     * 
+     * @param args Komentoriviparametrit. Pelissä ei niitä ole.
      */
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         Peli peli = new Peli();
         Kayttoliittyma kayttoliittyma = new Kayttoliittyma(peli);
         SwingUtilities.invokeLater(kayttoliittyma);

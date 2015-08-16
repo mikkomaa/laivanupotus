@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laivanupotus.sovelluslogiikka;
 
 import java.util.ArrayList;
@@ -13,19 +8,28 @@ import static laivanupotus.domain.Ruutu.*;
 import static laivanupotus.domain.Vakiot.*;
 
 /**
- *
- * @author Admin
+ * Luokka tarkistaa, ovatko pelilaudalle sijoitetut laivat oikein
  */
 public class LaivojenLukija {
 
     private Pelilauta lauta;
     private List<Laiva> laivat;
 
+    /**
+     * Luokan konstruktori
+     */
     public LaivojenLukija() {
         this.lauta = new Pelilauta();
         this.laivat = new ArrayList<>();
     }
 
+    /**
+     * Metodi tarkistaa, onko laivat oikein pelilaudalla. Metodi ei muuta
+     * tarkistettavaa pelilautaa mitenkään.
+     * 
+     * @param pelilauta Pelilauta, jonka laivat tarkistetaan
+     * @return Palauttaa true, jos laivat ovat oikein, muuten false
+     */
     public boolean lueLaivat(Pelilauta pelilauta) {
         this.laivat.clear();
         kopioiPelilauta(pelilauta);
