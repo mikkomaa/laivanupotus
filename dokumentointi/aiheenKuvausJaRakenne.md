@@ -2,7 +2,7 @@
 
 Aluksi pelaaja asettaa hiirellä omat laivansa, jonka jälkeen tietokone arpoo omansa. Pelaaja aloittaa pelin ampumalla hiirellä tietokoneen lautaan. Pelissä pelaaja ja tietokone ampuvat vuorotellen toistensa lautaan, kunnes jommankumman kaikki laivat ovat uponneet. Uuden pelin voi aloittaa milloin tahansa, ja pelaaja saa halutessaan ohjeita.
 
-Jokaisesta osumasta saa 1000 pistettä, ja jokaisesta ohilaukauksesta -50 pistettä.
+Jokaisesta osumasta saa 1000 pistettä ja jokaisesta ohilaukauksesta -50 pistettä.
 
 **Käyttäjät:** Pelaaja
 
