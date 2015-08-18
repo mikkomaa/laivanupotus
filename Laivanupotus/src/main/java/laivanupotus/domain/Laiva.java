@@ -1,3 +1,6 @@
+/*
+ * Pakkaus sisältää yksinkertaisia määritelmäluokkia ja yleisesti käytetyt vakiot
+ */
 package laivanupotus.domain;
 
 import java.util.ArrayList;

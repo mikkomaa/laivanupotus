@@ -54,3 +54,6 @@
 * Käyttöliittymän tapahtumankuuntelijoiden kirjoittamista, 4 h
 * Peli-luokan testien kirjoittamista ja ohjelman viimeistelyä, 2 h
 * JavaDocin tekemistä, 2 h
+
+18.8.2015
+* Sekvenssikaavioiden tekemistä, 2 h

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laivanupotus.tekoaly;
 
 import java.util.Random;
@@ -13,36 +8,57 @@ import static laivanupotus.domain.Vakiot.*;
 import laivanupotus.sovelluslogiikka.Pelilauta;
 
 /**
- *
- * @author Admin
+ * Luokka etsii tekoälylle seuraavan kohdan, johon se ampuu pelaajan lautaan
  */
 public class Ampuja {
 
+    // Ampujan sisäinen lauta, jolla se pitää kirjaa ammunnan tuloksesta
     private Pelilauta sisainenLauta;
+    // Pinon avulla ampuja upottaa pelaajan laivan yhden osuman jälkeen
     private Stack<Integer> pino;
+    // Koordinaatti vastaa pelilaudan ruutua 10 * korkeus + leveys,
+    // eli laillinen koordinaatti on välillä [0, 99]
     private int viimeisinKoordinaatti;
 
+    /**
+     * Konstruktori, joka luo ampujan
+     */
     public Ampuja() {
         this.sisainenLauta = new Pelilauta();
         this.pino = new Stack<>();
         this.viimeisinKoordinaatti = -1;
     }
 
+    /**
+     * Metodi alustaa ampujan uutta peliä varten
+     */
     public void alustaAmpuja() {
         this.sisainenLauta.alustaLauta();
         this.pino.clear();
         this.viimeisinKoordinaatti = -1;
     }
 
+    /**
+     * Metodi etsii ampumakoordinaatin. Jos aiemmin on tullut osuma, ammutaan
+     * osuman ympärille, kunnes pelaajan laiva on varmasti uponnut. Muulloin 
+     * koordinaatti arvotaan.
+     * 
+     * @return Palauttaa ampumakoordinaatin
+     */
     public int etsiAmpumakoordinaatti() {
         Integer koordinaatti = haeKoordinaattiPinosta();
-        if (koordinaatti == null) {
+        if (koordinaatti == null) { // edellinen laiva on varmuudella upotettu
             koordinaatti = arvoKoordinaatti();
         }
         this.viimeisinKoordinaatti = koordinaatti;
         return koordinaatti;
     }
 
+    /**
+     * Metodi päivittää ampujan tilan edellisen ammuksen tuloksen perusteella
+     * 
+     * @param ruutu Edellisen ammuksen tulos (OSUMA vai jokin muu)
+     */
     public void paivitaSisainenLauta(Ruutu ruutu) {
         int korkeus = this.viimeisinKoordinaatti / 10;
         int leveys = this.viimeisinKoordinaatti % 10;
@@ -59,6 +75,7 @@ public class Ampuja {
                 + "\nviimeisinKoordinaatti = " + viimeisinKoordinaatti;
     }
 
+    // Arpoo ampumakoordinaatin, jos edellisen osuman jälkihoito on päättynyt
     private int arvoKoordinaatti() {
         int korkeus, leveys;
         Ruutu ruutu;
@@ -76,9 +93,9 @@ public class Ampuja {
         while (!this.pino.empty()) {
             koordinaatti = this.pino.peek();
             koordinaatti = haeVierestaKoordinaatti(koordinaatti);
-            if (koordinaatti == null) {
+            if (koordinaatti == null) { // ei ammuttavaa koordinaatin vieressä
                 this.pino.pop();
-            } else {
+            } else { // löytyi ammuttavaa koordinaatin vierestä
                 break;
             }
         }

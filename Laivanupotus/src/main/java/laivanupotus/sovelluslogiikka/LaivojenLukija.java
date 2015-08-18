@@ -24,10 +24,11 @@ public class LaivojenLukija {
     }
 
     /**
-     * Metodi tarkistaa, onko laivat oikein pelilaudalla. Metodi ei muuta
+     * Metodi tarkistaa, ovatko laivat oikein pelilaudalla. Metodi ei muuta
      * tarkistettavaa pelilautaa mitenkään.
      * 
      * @param pelilauta Pelilauta, jonka laivat tarkistetaan
+     * 
      * @return Palauttaa true, jos laivat ovat oikein, muuten false
      */
     public boolean lueLaivat(Pelilauta pelilauta) {
