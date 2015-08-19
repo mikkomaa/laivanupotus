@@ -56,4 +56,7 @@
 * JavaDocin tekemistä, 2 h
 
 18.8.2015
-* Sekvenssikaavioiden tekemistä, 2 h
+* Sekvenssikaavioiden kertaamista ja tekemistä, 2 h
+
+19.8.2015
+* JavaDocin tekemistä, 1 h
