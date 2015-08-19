@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laivanupotus.kayttoliittyma;
 
 import java.awt.Color;
@@ -15,8 +10,7 @@ import static laivanupotus.domain.Ruutu.*;
 import laivanupotus.sovelluslogiikka.Peli;
 
 /**
- *
- * @author Admin
+ * Luokka määrittelee tekoälyn graafisen pelilaudan ruutujen toiminnallisuuden
  */
 public class TekoalynLaudanKuuntelija implements ActionListener {
 
@@ -29,6 +23,16 @@ public class TekoalynLaudanKuuntelija implements ActionListener {
     private final int korkeus;
     private final int leveys;
 
+    /**
+     * Luokan konstruktori
+     * 
+     * @param painike Tekoälyn pelilaudan ruutua vastaava painike
+     * @param teksti Käyttöliittymän ohjetekstialue
+     * @param pelaajanPisteet Käyttöliittymän pelaajan pisteet -alue
+     * @param tekoalynPisteet Käyttöliittymän tekoälyn pisteet -alue
+     * @param peli Sovelluslogiikkapakkauksen peli
+     * @param pelaajanLauta Pelaajan graafinen pelilauta käyttöliittymässä
+     */
     public TekoalynLaudanKuuntelija(Painike painike, JTextArea teksti,
             JTextArea pelaajanPisteet, JTextArea tekoalynPisteet,
             Peli peli, JPanel pelaajanLauta) {
@@ -48,15 +52,15 @@ public class TekoalynLaudanKuuntelija implements ActionListener {
             return;
         }
 
-        hoidaPelaajanVuoro();
-        if (this.peli.ovatkoLaivatUponneet()) { // Pelaaja voitti.
+        hoidaPelaajanVuoro(); // Pelaaja on ampunut hiirellä tekoälyn lautaan
+        if (this.peli.ovatkoLaivatUponneet()) { // Pelaaja voitti
             this.teksti.setText("Voitit!\n\nVoit aloittaa uuden pelin Aloita-napista.");
             this.peli.setPeliKaynnissa(false);
             return;
         }
 
-        hoidaTekoalynVuoro();
-        if (this.peli.ovatkoLaivatUponneet()) { // Tekoäly voitti.
+        hoidaTekoalynVuoro(); // Tekoäly ampuu pelaajan lautaan
+        if (this.peli.ovatkoLaivatUponneet()) { // Tekoäly voitti
             this.teksti.setText("Hävisit.\n\nVoit aloittaa uuden pelin Aloita-napista.");
             this.peli.setPeliKaynnissa(false);
         }

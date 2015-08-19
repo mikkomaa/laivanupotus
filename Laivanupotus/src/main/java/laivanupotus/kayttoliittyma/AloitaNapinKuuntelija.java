@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laivanupotus.kayttoliittyma;
 
 import java.awt.Color;
@@ -13,8 +8,7 @@ import javax.swing.JTextArea;
 import laivanupotus.sovelluslogiikka.Peli;
 
 /**
- *
- * @author Admin
+ * Luokka määrittelee Aloita-napin toiminnallisuuden
  */
 public class AloitaNapinKuuntelija implements ActionListener {
 
@@ -25,6 +19,16 @@ public class AloitaNapinKuuntelija implements ActionListener {
     private JPanel pelaajanLauta;
     private JPanel tekoalynLauta;
 
+    /**
+     * Luokan konstruktori
+     * 
+     * @param teksti Käyttöliittymän ohjetekstialua
+     * @param pelaajanPisteet Käyttöliittymän pelaajan pisteet -alue
+     * @param tekoalynPisteet Käyttöliittymän tekoälyn pisteet -alue
+     * @param peli Sovelluslogiikkapakkauksen peli
+     * @param pelaajanLauta Pelaajan graafinen pelilauta käyttöliittymässä
+     * @param tekoalynLauta Tekoälyn graafinen pelilauta käyttöliittymässä
+     */
     public AloitaNapinKuuntelija(JTextArea teksti, JTextArea pelaajanPisteet,
             JTextArea tekoalynPisteet, Peli peli, JPanel pelaajanLauta, JPanel tekoalynLauta) {
         this.teksti = teksti;
@@ -46,7 +50,7 @@ public class AloitaNapinKuuntelija implements ActionListener {
         if (onkoLaivatOk) {
             this.peli.asetaTekoalynLaivat();
             this.peli.setPeliKaynnissa(true);
-            this.teksti.setText("Aloita peli ampumalla Tekoälyn lautaan.");
+            this.teksti.setText("Pelaa peliä ampumalla hiirellä Tekoälyn lautaan.");
         } else {
             alustaUusiPeli();
             this.teksti.setText("Aseta laivat laudallesi oikein ja aloita peli Aloita-painikkeella.");

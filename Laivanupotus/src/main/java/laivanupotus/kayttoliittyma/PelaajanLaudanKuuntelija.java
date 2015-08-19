@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laivanupotus.kayttoliittyma;
 
 import java.awt.Color;
@@ -13,8 +8,8 @@ import static laivanupotus.domain.Ruutu.*;
 import laivanupotus.sovelluslogiikka.Peli;
 
 /**
- *
- * @author Admin
+ * Luokka määrittelee pelaajan graafisen pelilaudan ruutujen toiminnallisuuden,
+ * eli pelaaja voi asettaa laudalleen laivat hiirellä ennen peliä
  */
 public class PelaajanLaudanKuuntelija implements ActionListener {
 
@@ -23,6 +18,12 @@ public class PelaajanLaudanKuuntelija implements ActionListener {
     private final int korkeus;
     private final int leveys;
 
+    /**
+     * Luokan konstruktori
+     * 
+     * @param painike Pelilaudan ruutua vastaava painike
+     * @param peli Sovelluslogiikan peliolio
+     */
     public PelaajanLaudanKuuntelija(Painike painike, Peli peli) {
         this.peli = peli;
         this.painike = painike;

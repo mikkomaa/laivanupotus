@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Pakkaus sisältää graafisen käyttöliittymän luokat
  */
 package laivanupotus.kayttoliittyma;
 
@@ -15,8 +13,7 @@ import java.awt.GridLayout;
 import javax.swing.*;
 
 /**
- *
- * @author Admin
+ * Luokka luo käyttöliittymän graafiset komponentit
  */
 public class Kayttoliittyma implements Runnable {
 
@@ -29,6 +26,11 @@ public class Kayttoliittyma implements Runnable {
     private Peli peli;
     private final int IKKUNAN_LEVEYS = 450;
 
+    /**
+     * Luokan konstruktori
+     * 
+     * @param peli Sovelluslogiikkapakkauksen peliolio
+     */
     public Kayttoliittyma(Peli peli) {
         this.peli = peli;
     }
@@ -65,10 +67,6 @@ public class Kayttoliittyma implements Runnable {
         container.add(Box.createRigidArea(new Dimension(0, 10)));
         container.add(luoPainikkeet());
         container.add(this.teksti);
-    }
-
-    public JFrame getFrame() {
-        return frame;
     }
 
     private JTextArea luoTekstikentta() {

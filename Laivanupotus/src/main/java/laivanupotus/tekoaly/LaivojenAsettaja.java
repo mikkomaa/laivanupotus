@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laivanupotus.tekoaly;
 
 import java.util.Random;
@@ -13,17 +8,25 @@ import static laivanupotus.domain.Vakiot.*;
 import laivanupotus.sovelluslogiikka.Pelilauta;
 
 /**
- *
- * @author Admin
+ * Luokka tarjoaa palvelun, jolla tekoaly asettaa omat laivansa pelilaudalleen
  */
 public class LaivojenAsettaja {
 
     private Pelilauta pelilauta;
 
+    /**
+     * Luokan konstruktori
+     * 
+     * @param pelilauta Pelilauta, jolle laivat asetetaan
+     */
     public LaivojenAsettaja(Pelilauta pelilauta) {
         this.pelilauta = pelilauta;
     }
 
+    /**
+     * Metodi asettaa laivat pelilaudalle satunnaisesti. Metodin suorituksen
+     * jälkeen laivat ovat laudalla oikein ja lauta on muuten tyhjä.
+     */
     public void asetaLaivat() {
         do {
             this.pelilauta.alustaLauta();
@@ -32,12 +35,17 @@ public class LaivojenAsettaja {
             }
         } while (!this.pelilauta.lueLaivat());
     }
-    
-    // testausta helpottamaan
-    public Pelilauta getPelilauta() {
+
+    /**
+     * Apumetodi helpottamaan testausta
+     * 
+     * @return Palauttaa luokan pelilaudan
+     */
+        public Pelilauta getPelilauta() {
         return this.pelilauta;
     }
 
+    // Metodi asettaa pelilaudalle satunnaisesti yhden laivan
     private void asetaLaiva(int laivanKoko) {
         Random arpa = new Random();
         int alkupisteenKorkeus = arpa.nextInt(LAUDAN_KORKEUS);

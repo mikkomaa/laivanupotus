@@ -1,21 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laivanupotus.kayttoliittyma;
 
 import javax.swing.JButton;
 
 /**
- *
- * @author Admin
+ * Luokka määrittelee painikkeen, joka vastaa käyttöliittymän graafisen
+ * pelilaudan yhtä ruutua
  */
 public class Painike extends JButton {
 
     private int korkeus;
     private int leveys;
 
+    /**
+     * Luokan konstruktori
+     * 
+     * @param korkeus Painikkeen y-koordinaatti graafisella pelilaudalla
+     * @param leveys Painikkeen x-koordinaatti graafisella pelilaudalla
+     */
     public Painike(int korkeus, int leveys) {
         this.korkeus = korkeus;
         this.leveys = leveys;
