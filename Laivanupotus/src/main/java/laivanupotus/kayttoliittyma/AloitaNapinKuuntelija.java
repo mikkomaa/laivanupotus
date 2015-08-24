@@ -60,8 +60,8 @@ public class AloitaNapinKuuntelija implements ActionListener {
     private void alustaUusiPeli() {
         tyhjennaPelilaudat();
         this.teksti.setText(this.peli.tulostaOhje());
-        this.pelaajanPisteet.setText("Pisteet: 0");
-        this.tekoalynPisteet.setText("Pisteet: 0");
+        this.pelaajanPisteet.setText("Pelaajan pisteet: 0");
+        this.tekoalynPisteet.setText("Tekoälyn pisteet: 0");
         this.peli.setPeliKaynnissa(false);
     }
 

@@ -57,12 +57,14 @@ public class Kayttoliittyma implements Runnable {
         luoPelilaudat();
         this.pelaajanLauta.setPreferredSize(new Dimension(this.IKKUNAN_LEVEYS, 250));
         this.tekoalynLauta.setPreferredSize(new Dimension(this.IKKUNAN_LEVEYS, 250));
-        container.add(luoNimi("Pelaaja"));
+        
         container.add(this.pelaajanPisteet);
-        container.add(this.pelaajanLauta);
-        container.add(Box.createRigidArea(new Dimension(0, 10)));
-        container.add(luoNimi("Tekoäly"));
         container.add(this.tekoalynPisteet);
+        container.add(Box.createRigidArea(new Dimension(0, 20)));
+        container.add(luoLaudanNimi("Pelaajan lauta"));
+        container.add(this.pelaajanLauta);
+        container.add(Box.createRigidArea(new Dimension(0, 20)));
+        container.add(luoLaudanNimi("Tekoälyn lauta"));
         container.add(this.tekoalynLauta);
         container.add(Box.createRigidArea(new Dimension(0, 10)));
         container.add(luoPainikkeet());
@@ -79,10 +81,10 @@ public class Kayttoliittyma implements Runnable {
     }
     
     private void luoPistekentat() {
-        this.pelaajanPisteet = new JTextArea("Pisteet: 0");
+        this.pelaajanPisteet = new JTextArea("Pelaajan pisteet: 0");
         this.pelaajanPisteet.setEnabled(false);
         this.pelaajanPisteet.setDisabledTextColor(Color.black);
-        this.tekoalynPisteet = new JTextArea("Pisteet: 0");
+        this.tekoalynPisteet = new JTextArea("Tekoälyn pisteet: 0");
         this.tekoalynPisteet.setEnabled(false);
         this.tekoalynPisteet.setDisabledTextColor(Color.black);
     }
@@ -107,13 +109,11 @@ public class Kayttoliittyma implements Runnable {
         }
     }
 
-    private JPanel luoNimi(String nimi) {
-        JPanel paneeli = new JPanel();
-        JTextField nimikentta = new JTextField(nimi);
+    private JTextArea luoLaudanNimi(String nimi) {
+        JTextArea nimikentta = new JTextArea(nimi);
         nimikentta.setEnabled(false);
         nimikentta.setDisabledTextColor(Color.black);
-        paneeli.add(nimikentta);
-        return paneeli;
+        return nimikentta;
     }
 
     private JPanel luoPainikkeet() {

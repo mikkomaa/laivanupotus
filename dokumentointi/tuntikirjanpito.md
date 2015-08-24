@@ -60,3 +60,6 @@
 
 19.8.2015
 * JavaDocin tekemistä, 1 h
+
+24.8.2015
+* Sekvenssikaavio ja käyttöliittymän viimeistelyä, 2 h

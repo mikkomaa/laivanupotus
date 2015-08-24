@@ -97,8 +97,8 @@ public class TekoalynLaudanKuuntelija implements ActionListener {
     
     private void paivitaPisteet() {
         int pisteet = this.peli.getPelaajanPisteet();
-        this.pelaajanPisteet.setText("Pisteet: " + pisteet);
+        this.pelaajanPisteet.setText("Pelaajan pisteet: " + pisteet);
         pisteet = this.peli.getTekoalynPisteet();
-        this.tekoalynPisteet.setText("Pisteet: " + pisteet);
+        this.tekoalynPisteet.setText("Tekoälyn pisteet: " + pisteet);
     }
 }
