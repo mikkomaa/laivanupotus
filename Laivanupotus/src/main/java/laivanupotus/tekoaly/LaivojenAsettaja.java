@@ -41,7 +41,7 @@ public class LaivojenAsettaja {
      * 
      * @return Palauttaa luokan pelilaudan
      */
-        public Pelilauta getPelilauta() {
+    public Pelilauta getPelilauta() {
         return this.pelilauta;
     }
 

@@ -1,0 +1,2564 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+border: 1px solid #dddddd;
+padding-top: 10px;
+padding-right: 5px;
+padding-left: 5px;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+
+.pop {outline:none; }
+.pop strong {line-height:30px;}
+.pop {text-decoration:none;}
+.pop span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:800px; line-height:16px; word-wrap:break-word; }
+.pop:hover span{ display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0;}
+
+.pop span { border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+</style>
+
+</head>
+<body>
+
+
+<h1>Pelilauta.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_1'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package laivanupotus.sovelluslogiikka;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_2'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_3'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import laivanupotus.domain.PisteidenLaskija;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_4'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import laivanupotus.domain.Ruutu;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_5'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import static laivanupotus.domain.Ruutu.*;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_6'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import static laivanupotus.domain.Vakiot.*;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_7'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_8'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_9'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Luokka m&#195;&#164;&#195;&#164;rittelee pelilaudan</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_10'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_11'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class Pelilauta {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_12'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_13'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private Ruutu[][] lauta;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_14'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private PisteidenLaskija pisteidenLaskija;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_15'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_16'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_17'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Luokan konstruktori, joka luo pelilaudan ja alustaa sen peli&#195;&#164; varten</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_18'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_19'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    public Pelilauta() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_20'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.lauta = new Ruutu[LAUDAN_KORKEUS][LAUDAN_LEVEYS];</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_21'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.pisteidenLaskija = new PisteidenLaskija();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_22'/>
+22
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_22'>1</a>
+<span>
+
+1. <init> : removed call to laivanupotus/sovelluslogiikka/Pelilauta::alustaLauta &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.alustaLauta();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_23'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_24'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_25'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_26'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Metodi alustaa pelilaudan uutta peli&#195;&#164; varten</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_27'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_28'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void alustaLauta() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_29'/>
+29
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_29'>3</a>
+<span>
+
+1. alustaLauta : changed conditional boundary &rarr; KILLED<br/>
+
+2. alustaLauta : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+3. alustaLauta : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (int korkeus = 0; korkeus &#60; LAUDAN_KORKEUS; korkeus++) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_30'/>
+30
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_30'>3</a>
+<span>
+
+1. alustaLauta : changed conditional boundary &rarr; KILLED<br/>
+
+2. alustaLauta : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+3. alustaLauta : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            for (int leveys = 0; leveys &#60; LAUDAN_LEVEYS; leveys++) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_31'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                this.lauta[korkeus][leveys] = TYHJA;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_32'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_33'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_34'/>
+34
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_34'>1</a>
+<span>
+
+1. alustaLauta : removed call to laivanupotus/domain/PisteidenLaskija::nollaaPisteet &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.pisteidenLaskija.nollaaPisteet();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_35'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_36'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_37'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_38'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Metodi asettaa pelilaudan tietyn ruudun arvon</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_39'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_40'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param korkeus Asetettavan ruudun y-koordinaatti</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_41'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param leveys Asetettavan ruudun x-koordinaatti</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_42'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param ruutu Ruudulle asetettava arvo</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_43'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_44'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void setRuutu(int korkeus, int leveys, Ruutu ruutu) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_45'/>
+45
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_45'>1</a>
+<span>
+
+1. setRuutu : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (onkoRuutuLaudalla(korkeus, leveys)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_46'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            this.lauta[korkeus][leveys] = ruutu;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_47'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_48'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_49'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_50'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_51'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Metodi palauttaa pelilaudan tietyn ruudun arvon</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_52'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_53'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param korkeus Palautettavan ruudun y-koordinaatti</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_54'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param leveys Palautettavan ruudun x-koordinaatti</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_55'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_56'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return Palauttaa ruudun arvon</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_57'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_58'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public Ruutu getRuutu(int korkeus, int leveys) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_59'/>
+59
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_59'>1</a>
+<span>
+
+1. getRuutu : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (onkoRuutuLaudalla(korkeus, leveys)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_60'/>
+60
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_60'>1</a>
+<span>
+
+1. getRuutu : mutated return of Object value for laivanupotus/sovelluslogiikka/Pelilauta::getRuutu to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return this.lauta[korkeus][leveys];</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_61'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_62'/>
+62
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_62'>1</a>
+<span>
+
+1. getRuutu : mutated return of Object value for laivanupotus/sovelluslogiikka/Pelilauta::getRuutu to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return null;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_63'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_64'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_65'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_66'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Metodi tarkistaa, ovatko laivat oikein pelilaudalla</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_67'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_68'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return Palauttaa true, jos laivat ovat oikein, muuten false</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_69'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_70'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public boolean lueLaivat() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_71'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        LaivojenLukija lukija = new LaivojenLukija();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_72'/>
+72
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_72'>1</a>
+<span>
+
+1. lueLaivat : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return lukija.lueLaivat(this);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_73'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_74'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_75'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_76'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Metodi muuttaa pelilaudan ruudun arvoksi AMMUTTU, jos ruudussa ei ole</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_77'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * laivaa, ja arvoksi OSUMA, jos ruudussa on laiva</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_78'/>
+78
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_78'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_79'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param korkeus Muutettavan ruudun y-koordinaatti</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_80'/>
+80
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_80'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param leveys Muutettavan ruudun x-koordinaatti</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_81'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_82'/>
+82
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_82'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return Palauttaa muutetun ruudun arvon muutoksen j&#195;&#164;lkeen</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_83'/>
+83
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_83'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_84'/>
+84
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_84'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public Ruutu ammu(int korkeus, int leveys) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_85'/>
+85
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_85'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Ruutu ruutu = getRuutu(korkeus, leveys);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_86'/>
+86
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_86'>1</a>
+<span>
+
+1. ammu : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (ruutu == TYHJA) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_87'/>
+87
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_87'>1</a>
+<span>
+
+1. ammu : removed call to laivanupotus/sovelluslogiikka/Pelilauta::setRuutu &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            setRuutu(korkeus, leveys, AMMUTTU);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_88'/>
+88
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_88'>1</a>
+<span>
+
+1. ammu : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (ruutu == LAIVA) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_89'/>
+89
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_89'>1</a>
+<span>
+
+1. ammu : removed call to laivanupotus/sovelluslogiikka/Pelilauta::setRuutu &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            this.setRuutu(korkeus, leveys, OSUMA);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_90'/>
+90
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_90'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_91'/>
+91
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_91'>1</a>
+<span>
+
+1. ammu : mutated return of Object value for laivanupotus/sovelluslogiikka/Pelilauta::ammu to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return getRuutu(korkeus, leveys);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_92'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_93'/>
+93
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_93'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_94'/>
+94
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_94'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_95'/>
+95
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_95'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Metodi tarkistaa, ovatko pelilaudan laivat uponneet eli jokainen</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_96'/>
+96
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_96'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * laivaruutu saanut osuman</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_97'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_98'/>
+98
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_98'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return Palauttaa true, jos laivat ovat uponneet, muuten false</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_99'/>
+99
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_99'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_100'/>
+100
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_100'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public boolean ovatkoLaivatUponneet() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_101'/>
+101
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_101'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        int osumia = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_102'/>
+102
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_102'>3</a>
+<span>
+
+1. ovatkoLaivatUponneet : changed conditional boundary &rarr; KILLED<br/>
+
+2. ovatkoLaivatUponneet : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+3. ovatkoLaivatUponneet : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (int korkeus = 0; korkeus &#60; LAUDAN_KORKEUS; korkeus++) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_103'/>
+103
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_103'>3</a>
+<span>
+
+1. ovatkoLaivatUponneet : changed conditional boundary &rarr; KILLED<br/>
+
+2. ovatkoLaivatUponneet : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+3. ovatkoLaivatUponneet : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            for (int leveys = 0; leveys &#60; LAUDAN_LEVEYS; leveys++) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_104'/>
+104
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_104'>1</a>
+<span>
+
+1. ovatkoLaivatUponneet : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                if (this.lauta[korkeus][leveys] == OSUMA) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_105'/>
+105
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_105'>1</a>
+<span>
+
+1. ovatkoLaivatUponneet : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                    osumia++;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_106'/>
+106
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_106'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_107'/>
+107
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_107'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_108'/>
+108
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_108'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_109'/>
+109
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_109'>2</a>
+<span>
+
+1. ovatkoLaivatUponneet : negated conditional &rarr; KILLED<br/>
+
+2. ovatkoLaivatUponneet : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return osumia == LAIVARUUTUJA;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_110'/>
+110
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_110'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_111'/>
+111
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_111'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_112'/>
+112
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_112'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_113'/>
+113
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_113'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Metodi lis&#195;&#164;&#195;&#164; pelilaudan pisteit&#195;&#164;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_114'/>
+114
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_114'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_115'/>
+115
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_115'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param maara Lis&#195;&#164;tt&#195;&#164;v&#195;&#164; pistem&#195;&#164;&#195;&#164;r&#195;&#164;, joka voi olla my&#195;&#182;s negatiivinen</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_116'/>
+116
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_116'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_117'/>
+117
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_117'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void lisaaPisteet(int maara) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_118'/>
+118
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_118'>1</a>
+<span>
+
+1. lisaaPisteet : removed call to laivanupotus/domain/PisteidenLaskija::lisaaPisteet &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.pisteidenLaskija.lisaaPisteet(maara);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_119'/>
+119
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_119'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_120'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_121'/>
+121
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_121'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public int getPisteet() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_122'/>
+122
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_122'>1</a>
+<span>
+
+1. getPisteet : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return this.pisteidenLaskija.getPisteet();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_123'/>
+123
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_123'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_124'/>
+124
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_124'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_125'/>
+125
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_125'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_126'/>
+126
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_126'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Metodi nollaa pelilaudan pisteet</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_127'/>
+127
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_127'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_128'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void nollaaPisteet() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_129'/>
+129
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_129'>1</a>
+<span>
+
+1. nollaaPisteet : removed call to laivanupotus/domain/PisteidenLaskija::nollaaPisteet &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.pisteidenLaskija.nollaaPisteet();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_130'/>
+130
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_130'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_131'/>
+131
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_131'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_132'/>
+132
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_132'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_133'/>
+133
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_133'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public String toString() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_134'/>
+134
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_134'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String mjono = &#34;&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_135'/>
+135
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_135'>3</a>
+<span>
+
+1. toString : changed conditional boundary &rarr; KILLED<br/>
+
+2. toString : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+3. toString : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (int korkeus = 0; korkeus &#60; LAUDAN_KORKEUS; korkeus++) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_136'/>
+136
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_136'>3</a>
+<span>
+
+1. toString : changed conditional boundary &rarr; KILLED<br/>
+
+2. toString : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+3. toString : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            for (int leveys = 0; leveys &#60; LAUDAN_LEVEYS; leveys++) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_137'/>
+137
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_137'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                mjono += this.lauta[korkeus][leveys] + &#34;\t&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_138'/>
+138
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_138'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_139'/>
+139
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_139'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            mjono += &#34;\n&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_140'/>
+140
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_140'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_141'/>
+141
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_141'>1</a>
+<span>
+
+1. toString : mutated return of Object value for laivanupotus/sovelluslogiikka/Pelilauta::toString to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return mjono;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_142'/>
+142
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_142'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_143'/>
+143
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_143'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_144'/>
+144
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_144'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private boolean onkoRuutuLaudalla(int korkeus, int leveys) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_145'/>
+145
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_145'>9</a>
+<span>
+
+1. onkoRuutuLaudalla : changed conditional boundary &rarr; KILLED<br/>
+
+2. onkoRuutuLaudalla : changed conditional boundary &rarr; KILLED<br/>
+
+3. onkoRuutuLaudalla : changed conditional boundary &rarr; KILLED<br/>
+
+4. onkoRuutuLaudalla : changed conditional boundary &rarr; KILLED<br/>
+
+5. onkoRuutuLaudalla : negated conditional &rarr; KILLED<br/>
+
+6. onkoRuutuLaudalla : negated conditional &rarr; KILLED<br/>
+
+7. onkoRuutuLaudalla : negated conditional &rarr; KILLED<br/>
+
+8. onkoRuutuLaudalla : negated conditional &rarr; KILLED<br/>
+
+9. onkoRuutuLaudalla : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return korkeus &#62;= 0 &#38;&#38; korkeus &#60; LAUDAN_KORKEUS &#38;&#38; leveys &#62;= 0 &#38;&#38; leveys &#60; LAUDAN_LEVEYS;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_146'/>
+146
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_146'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_147'/>
+147
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_147'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_22'>22</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_22'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.getRuutuToimiiOikeinKunRuutuOnLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> removed call to laivanupotus/sovelluslogiikka/Pelilauta::alustaLauta &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_29'>29</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_29'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>alustaLauta<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.alustaLautaNollaaPisteetOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>alustaLauta<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.alustaLautaNollaaPisteetOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>alustaLauta<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.getRuutuToimiiOikeinKunRuutuOnLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_30'>30</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_30'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>alustaLauta<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.alustaLautaNollaaPisteetOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>alustaLauta<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.alustaLautaNollaaPisteetOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>alustaLauta<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.getRuutuToimiiOikeinKunRuutuOnLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_34'>34</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_34'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>alustaLauta<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.alustaLautaNollaaPisteetOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> removed call to laivanupotus/domain/PisteidenLaskija::nollaaPisteet &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_45'>45</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_45'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>setRuutu<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.setRuutuToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_59'>59</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_59'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getRuutu<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ammuToimiiOikeinKunKoordinaattiEiOleLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_60'>60</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_60'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getRuutu<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.setRuutuToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> mutated return of Object value for laivanupotus/sovelluslogiikka/Pelilauta::getRuutu to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_62'>62</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_62'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getRuutu<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ammuToimiiOikeinKunKoordinaattiEiOleLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> mutated return of Object value for laivanupotus/sovelluslogiikka/Pelilauta::getRuutu to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_72'>72</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_72'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lueLaivat<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.lueLaivatToimiiOikeinKunLaivatOvatVaarin(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_86'>86</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_86'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>ammu<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ammuToimiiOikeinKunKoordinaattiOnLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_87'>87</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_87'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>ammu<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ammuToimiiOikeinKunKoordinaattiOnLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> removed call to laivanupotus/sovelluslogiikka/Pelilauta::setRuutu &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_88'>88</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_88'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>ammu<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ammuToimiiOikeinKunKoordinaattiOnLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_89'>89</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_89'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>ammu<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ammuToimiiOikeinKunKoordinaattiOnLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> removed call to laivanupotus/sovelluslogiikka/Pelilauta::setRuutu &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_91'>91</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_91'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>ammu<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ammuToimiiOikeinKunKoordinaattiEiOleLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> mutated return of Object value for laivanupotus/sovelluslogiikka/Pelilauta::ammu to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_102'>102</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_102'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>ovatkoLaivatUponneet<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ovatkoLaivatUponneetToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>ovatkoLaivatUponneet<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ovatkoLaivatUponneetToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>ovatkoLaivatUponneet<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ovatkoLaivatUponneetToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_103'>103</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_103'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>ovatkoLaivatUponneet<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ovatkoLaivatUponneetToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>ovatkoLaivatUponneet<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ovatkoLaivatUponneetToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>ovatkoLaivatUponneet<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ovatkoLaivatUponneetToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_104'>104</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_104'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>ovatkoLaivatUponneet<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ovatkoLaivatUponneetToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_105'>105</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_105'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>ovatkoLaivatUponneet<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ovatkoLaivatUponneetToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_109'>109</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_109'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>ovatkoLaivatUponneet<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ovatkoLaivatUponneetToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>ovatkoLaivatUponneet<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ovatkoLaivatUponneetToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_118'>118</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_118'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lisaaPisteet<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.lisaaPisteetToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> removed call to laivanupotus/domain/PisteidenLaskija::lisaaPisteet &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_122'>122</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_122'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getPisteet<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.alustaLautaNollaaPisteetOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_129'>129</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_129'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nollaaPisteet<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.nollaaPisteetToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> removed call to laivanupotus/domain/PisteidenLaskija::nollaaPisteet &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_135'>135</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_135'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.konstruktoriLuoLaudanOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.konstruktoriLuoLaudanOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.konstruktoriLuoLaudanOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_136'>136</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_136'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.konstruktoriLuoLaudanOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.konstruktoriLuoLaudanOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.konstruktoriLuoLaudanOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_141'>141</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_141'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.konstruktoriLuoLaudanOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> mutated return of Object value for laivanupotus/sovelluslogiikka/Pelilauta::toString to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f0b0f4_145'>145</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f0b0f4_145'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>onkoRuutuLaudalla<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.setRuutuToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>onkoRuutuLaudalla<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.getRuutuToimiiOikeinKunRuutuEiOleLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>onkoRuutuLaudalla<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.setRuutuToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>onkoRuutuLaudalla<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.getRuutuToimiiOikeinKunRuutuEiOleLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>onkoRuutuLaudalla<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ammuToimiiOikeinKunKoordinaattiEiOleLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>onkoRuutuLaudalla<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.setRuutuToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>onkoRuutuLaudalla<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.setRuutuToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>onkoRuutuLaudalla<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ammuToimiiOikeinKunKoordinaattiEiOleLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>onkoRuutuLaudalla<br/><b>Killed by : </b>laivanupotus.sovelluslogiikka.PelilautaTest.ammuToimiiOikeinKunKoordinaattiEiOleLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest)</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+
+<li class='mutator'>MATH_MUTATOR</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>laivanupotus.sovelluslogiikka.PelilautaTest.ovatkoLaivatUponneetToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest) (4 ms)</li><li>laivanupotus.sovelluslogiikka.LaivojenLukijaTest.etsiLaivatLaudaltaToimiiOikein(laivanupotus.sovelluslogiikka.LaivojenLukijaTest) (57 ms)</li><li>laivanupotus.tekoaly.LaivojenAsettajaTest.laivatAsetetaanOikeinKunLautaEiOleTyhja(laivanupotus.tekoaly.LaivojenAsettajaTest) (8 ms)</li><li>laivanupotus.sovelluslogiikka.PeliTest.getTekoalynPisteetToimiiOikein(laivanupotus.sovelluslogiikka.PeliTest) (5 ms)</li><li>laivanupotus.sovelluslogiikka.PelilautaTest.alustaLautaNollaaPisteetOikein(laivanupotus.sovelluslogiikka.PelilautaTest) (4 ms)</li><li>laivanupotus.tekoaly.TekoalyTest.konstruktoriAlustaaTekoalynOikein(laivanupotus.tekoaly.TekoalyTest) (4 ms)</li><li>laivanupotus.sovelluslogiikka.PelilautaTest.lueLaivatToimiiOikeinKunLaivatOvatVaarin(laivanupotus.sovelluslogiikka.PelilautaTest) (4 ms)</li><li>laivanupotus.sovelluslogiikka.PeliTest.getPelaajanRuutuToimiiOikein(laivanupotus.sovelluslogiikka.PeliTest) (5 ms)</li><li>laivanupotus.tekoaly.TekoalyTest.alustaTekoalyToimiiOikein(laivanupotus.tekoaly.TekoalyTest) (4 ms)</li><li>laivanupotus.sovelluslogiikka.LaivojenLukijaTest.lueLaivatToimiiOikeinKunLaivatOvatOikein(laivanupotus.sovelluslogiikka.LaivojenLukijaTest) (6 ms)</li><li>laivanupotus.sovelluslogiikka.LaivojenLukijaTest.onkoLaivojaKulmittainToimiiOikeinKunVasemmassaAlakulmassaOnLaiva(laivanupotus.sovelluslogiikka.LaivojenLukijaTest) (5 ms)</li><li>laivanupotus.sovelluslogiikka.PeliTest.asetaTekoalynLaivatToimiiOikein(laivanupotus.sovelluslogiikka.PeliTest) (36 ms)</li><li>laivanupotus.tekoaly.TekoalyTest.ammuAntaaLaudallaOlevanKoordinaatin(laivanupotus.tekoaly.TekoalyTest) (3 ms)</li><li>laivanupotus.sovelluslogiikka.PelilautaTest.ammuToimiiOikeinKunKoordinaattiEiOleLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest) (4 ms)</li><li>laivanupotus.tekoaly.LaivojenAsettajaTest.konstruktoriToimiiOikein(laivanupotus.tekoaly.LaivojenAsettajaTest) (3 ms)</li><li>laivanupotus.sovelluslogiikka.PelilautaTest.nollaaPisteetToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest) (4 ms)</li><li>laivanupotus.tekoaly.AmpujaTest.ampujaAntaaLaudallaOlevanKoordinaatin(laivanupotus.tekoaly.AmpujaTest) (20 ms)</li><li>laivanupotus.sovelluslogiikka.PeliTest.onkoPeliKaynnissaToimiiOikein(laivanupotus.sovelluslogiikka.PeliTest) (5 ms)</li><li>laivanupotus.tekoaly.LaivojenAsettajaTest.laivatAsetetaanOikeinUseitaKertoja(laivanupotus.tekoaly.LaivojenAsettajaTest) (117 ms)</li><li>laivanupotus.tekoaly.LaivojenAsettajaTest.laivatAsetetaanOikeinKunLautaOnTyhja(laivanupotus.tekoaly.LaivojenAsettajaTest) (4 ms)</li><li>laivanupotus.sovelluslogiikka.PeliTest.ammuTekoalynLautaanPalauttaaRuudunOikein(laivanupotus.sovelluslogiikka.PeliTest) (8 ms)</li><li>laivanupotus.sovelluslogiikka.PelilautaTest.konstruktoriLuoLaudanOikein(laivanupotus.sovelluslogiikka.PelilautaTest) (4 ms)</li><li>laivanupotus.sovelluslogiikka.PeliTest.tulostaOhjeToimiiOikein(laivanupotus.sovelluslogiikka.PeliTest) (4 ms)</li><li>laivanupotus.sovelluslogiikka.PelilautaTest.konstruktoriAlustaaPisteetOikein(laivanupotus.sovelluslogiikka.PelilautaTest) (4 ms)</li><li>laivanupotus.tekoaly.TekoalyTest.paivitaAmmuksenTulosPaivittaaOikein(laivanupotus.tekoaly.TekoalyTest) (13 ms)</li><li>laivanupotus.sovelluslogiikka.PeliTest.asetaPelaajanLaivatToimiiOikein(laivanupotus.sovelluslogiikka.PeliTest) (13 ms)</li><li>laivanupotus.sovelluslogiikka.PeliTest.alustaPeliToimiiOikein(laivanupotus.sovelluslogiikka.PeliTest) (15 ms)</li><li>laivanupotus.sovelluslogiikka.PeliTest.getTekoalynRuutuToimiiOikein(laivanupotus.sovelluslogiikka.PeliTest) (5 ms)</li><li>laivanupotus.sovelluslogiikka.PelilautaTest.getRuutuToimiiOikeinKunRuutuEiOleLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest) (5 ms)</li><li>laivanupotus.sovelluslogiikka.PelilautaTest.getRuutuToimiiOikeinKunRuutuOnLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest) (5 ms)</li><li>laivanupotus.sovelluslogiikka.LaivojenLukijaTest.lueLaivatToimiiOikeinKunLaivatEnsinVaarinJaSittenOikein(laivanupotus.sovelluslogiikka.LaivojenLukijaTest) (7 ms)</li><li>laivanupotus.sovelluslogiikka.LaivojenLukijaTest.onkoLaivojaOikeaMaaraToimiiOikeinKunMaaraOnVaarin(laivanupotus.sovelluslogiikka.LaivojenLukijaTest) (7 ms)</li><li>laivanupotus.tekoaly.AmpujaTest.koordinaattiaHaetaanPinostaJosPinoEiOleTyhja(laivanupotus.tekoaly.AmpujaTest) (2 ms)</li><li>laivanupotus.sovelluslogiikka.PeliTest.ammuPelaajanLautaanLisaaOsumapisteetOikein(laivanupotus.sovelluslogiikka.PeliTest) (6 ms)</li><li>laivanupotus.sovelluslogiikka.PelilautaTest.lueLaivatToimiiOikeinKunLaivatOvatOikein(laivanupotus.sovelluslogiikka.PelilautaTest) (5 ms)</li><li>laivanupotus.tekoaly.AmpujaTest.koordinaatitHaetaanOsumanJalkeenOsumanYmparilta(laivanupotus.tekoaly.AmpujaTest) (2 ms)</li><li>laivanupotus.tekoaly.AmpujaTest.konstruktoriLuoAmpujanOikein(laivanupotus.tekoaly.AmpujaTest) (3 ms)</li><li>laivanupotus.sovelluslogiikka.LaivojenLukijaTest.onkoLaivojaKulmittainToimiiOikeinKunOikeassaAlakulmassaOnLaiva(laivanupotus.sovelluslogiikka.LaivojenLukijaTest) (5 ms)</li><li>laivanupotus.sovelluslogiikka.PeliTest.ammuTekoalynLautaanLisaaHutipisteetOikein(laivanupotus.sovelluslogiikka.PeliTest) (10 ms)</li><li>laivanupotus.sovelluslogiikka.PeliTest.ovatkoLaivatUponneetToimiiOikein(laivanupotus.sovelluslogiikka.PeliTest) (4 ms)</li><li>laivanupotus.sovelluslogiikka.LaivojenLukijaTest.lueLaivatToimiiOikeinKunLaivatOvatLaudanKulmissa(laivanupotus.sovelluslogiikka.LaivojenLukijaTest) (5 ms)</li><li>laivanupotus.tekoaly.AmpujaTest.vinoruudutAsetetaanAmmutuiksiOsumanJalkeen(laivanupotus.tekoaly.AmpujaTest) (3 ms)</li><li>laivanupotus.sovelluslogiikka.LaivojenLukijaTest.lueLaivatToimiiOikeinKunLaivatEnsinOikeinJaSittenVaarin(laivanupotus.sovelluslogiikka.LaivojenLukijaTest) (16 ms)</li><li>laivanupotus.sovelluslogiikka.PeliTest.getPelaajanPisteetToimiiOikein(laivanupotus.sovelluslogiikka.PeliTest) (21 ms)</li><li>laivanupotus.tekoaly.AmpujaTest.alustaAmpujaAlustaaAmpujanOikein(laivanupotus.tekoaly.AmpujaTest) (7 ms)</li><li>laivanupotus.sovelluslogiikka.PelilautaTest.lisaaPisteetToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest) (4 ms)</li><li>laivanupotus.tekoaly.TekoalyTest.asetaLaivatAsettaaLaivatOikein(laivanupotus.tekoaly.TekoalyTest) (3 ms)</li><li>laivanupotus.sovelluslogiikka.PeliTest.setPelaajanRuutuToimiiOikein(laivanupotus.sovelluslogiikka.PeliTest) (5 ms)</li><li>laivanupotus.sovelluslogiikka.PelilautaTest.setRuutuToimiiOikein(laivanupotus.sovelluslogiikka.PelilautaTest) (4 ms)</li><li>laivanupotus.sovelluslogiikka.LaivojenLukijaTest.onkoLaivojenKootOikeinToimiiOikeinKunKootOvatVaarin(laivanupotus.sovelluslogiikka.LaivojenLukijaTest) (6 ms)</li><li>laivanupotus.sovelluslogiikka.PelilautaTest.ammuToimiiOikeinKunKoordinaattiOnLaudalla(laivanupotus.sovelluslogiikka.PelilautaTest) (5 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.1.4
+
+</body>
+</html>

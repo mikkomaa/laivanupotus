@@ -24,7 +24,7 @@ public class Kayttoliittyma implements Runnable {
     private JPanel pelaajanLauta;
     private JPanel tekoalynLauta;
     private Peli peli;
-    private final int IKKUNAN_LEVEYS = 450;
+    private final int ikkunanLeveys = 450;
 
     /**
      * Luokan konstruktori
@@ -38,7 +38,7 @@ public class Kayttoliittyma implements Runnable {
     @Override
     public void run() {
         frame = new JFrame("Laivanupotus");
-        frame.setPreferredSize(new Dimension(this.IKKUNAN_LEVEYS, 750));
+        frame.setPreferredSize(new Dimension(this.ikkunanLeveys, 750));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,8 +55,8 @@ public class Kayttoliittyma implements Runnable {
         this.teksti = luoTekstikentta();
         luoPistekentat();
         luoPelilaudat();
-        this.pelaajanLauta.setPreferredSize(new Dimension(this.IKKUNAN_LEVEYS, 250));
-        this.tekoalynLauta.setPreferredSize(new Dimension(this.IKKUNAN_LEVEYS, 250));
+        this.pelaajanLauta.setPreferredSize(new Dimension(this.ikkunanLeveys, 250));
+        this.tekoalynLauta.setPreferredSize(new Dimension(this.ikkunanLeveys, 250));
         
         container.add(this.pelaajanPisteet);
         container.add(this.tekoalynPisteet);

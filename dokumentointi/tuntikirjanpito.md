@@ -63,3 +63,10 @@
 
 24.8.2015
 * Sekvenssikaavio ja käyttöliittymän viimeistelyä, 2 h
+
+25.8.2015
+* Kurssin demotilaisuus, 1 h
+
+29.8.2015
+* Katselmoitavaan koodiin tutustuminen ja palautteen anto, 2 h
+* Projektin viimeistelyä, 2 h

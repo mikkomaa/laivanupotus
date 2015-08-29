@@ -73,7 +73,7 @@ public class Tekoaly {
      * 
      * @return Palauttaa tekoälyn pelilaudan
      */
-        public Pelilauta getTekoalynLauta() {
+    public Pelilauta getTekoalynLauta() {
         return this.tekoalynLauta;
     }
 }
