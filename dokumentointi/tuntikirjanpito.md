@@ -70,3 +70,6 @@
 29.8.2015
 * Katselmoitavaan koodiin tutustuminen ja palautteen anto, 2 h
 * Projektin viimeistelyä, 2 h
+
+30.8.2015
+* Rakennekuvaus ja käyttöohje sekä projektin viimeistelyä, 1 h
